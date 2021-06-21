@@ -19,6 +19,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -340,10 +341,10 @@ public class Keymaker extends JPanel {
 	
 	private String pwiDesc(String[] pwi) {
 		return 
-				  translate("account")	+ ":\t" + pwi[ACCOUNT] + System.lineSeparator()
-				+ translate("format")	+ ":\t" + pwi[FORMAT] + System.lineSeparator()
-				+ translate("password")	+ ":\t" + generate(pwi[ACCOUNT], pwi[FORMAT]) + System.lineSeparator()
-				+ translate("created")	+ ":\t" + pwi[DATE];
+				  translate("account")	+ ": \t" + pwi[ACCOUNT] + System.lineSeparator()
+				+ translate("format")	+ ": \t" + pwi[FORMAT] + System.lineSeparator()
+				+ translate("password")	+ ": \t" + generate(pwi[ACCOUNT], pwi[FORMAT]) + System.lineSeparator()
+				+ translate("created")	+ ": \t" + new Date(Long.parseLong(pwi[DATE])).toString();
 	}
 	
 	@SuppressWarnings("unchecked")
